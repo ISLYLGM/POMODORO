@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.statusBarColor = 0xFF87CEFA.toInt() // azul pastel
+        window.statusBarColor = 0xFF87CEFA.toInt() 
         window.navigationBarColor = 0xFF87CEFA.toInt()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -94,7 +94,7 @@ fun HomeScreen(navController: NavHostController) {
                 modifier = Modifier
                     .wrapContentWidth()
                     .background(
-                        color = Color(0xFFFFA07A), // salmão
+                        color = Color(0xFFFFA07A), 
                         shape = MaterialTheme.shapes.medium
                     )
                     .padding(horizontal = 16.dp, vertical = 8.dp)
