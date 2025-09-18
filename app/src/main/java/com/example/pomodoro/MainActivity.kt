@@ -90,7 +90,6 @@ fun HomeScreen(navController: NavHostController) {
                 .padding(top = 100.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // 🔴 Card salmão atrás do texto
             Box(
                 modifier = Modifier
                     .wrapContentWidth()
@@ -109,12 +108,12 @@ fun HomeScreen(navController: NavHostController) {
             }
         }
 
-        // Botões centralizados
+       
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(horizontal = 32.dp)
-                .padding(top = 180.dp, bottom = 16.dp), // ajusta para ficar abaixo do texto
+                .padding(top = 180.dp, bottom = 16.dp), 
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
@@ -145,7 +144,7 @@ fun HomeScreen(navController: NavHostController) {
 
 @Composable
 fun TimerScreen(navController: NavHostController) {
-    val totalTime = 25 * 60 // 25 minutos
+    val totalTime = 25 * 60 
     var secondsLeft by remember { mutableStateOf(totalTime) }
     var isRunning by remember { mutableStateOf(false) }
 
@@ -155,7 +154,7 @@ fun TimerScreen(navController: NavHostController) {
         return "%02d:%02d".format(minutes, secs)
     }
 
-    // Contagem regressiva
+   
     LaunchedEffect(isRunning) {
         while (isRunning && secondsLeft > 0) {
             kotlinx.coroutines.delay(1000L)
@@ -169,7 +168,7 @@ fun TimerScreen(navController: NavHostController) {
             .fillMaxSize()
             .padding(24.dp)
     ) {
-        // 🔝 Topo com seta + título
+        
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -189,7 +188,7 @@ fun TimerScreen(navController: NavHostController) {
             )
         }
 
-        // ⏱️ Timer centralizado
+
         Column(
             modifier = Modifier.align(Alignment.Center),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -211,7 +210,7 @@ fun TimerScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(36.dp))
 
-            // 🔴 Botões vermelhos centralizados
+           
             Row(
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
@@ -254,7 +253,7 @@ fun NotesScreen(navController: NavHostController) {
             .background(Color(0xFFE0F7FA))
             .padding(16.dp)
     ) {
-        // 🔙 Seta de voltar
+       
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
@@ -330,7 +329,7 @@ fun ProfileScreen(navController: NavHostController) {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        // 🔝 Topo com seta + título
+       
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
@@ -350,7 +349,7 @@ fun ProfileScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Imagem do avatar
+
         val imageRes = if (selectedProfile == "Nina") R.drawable.girl else R.drawable.boy
         Box(
             modifier = Modifier
@@ -359,7 +358,7 @@ fun ProfileScreen(navController: NavHostController) {
                 .background(Color.Gray)
                 .border(
                     width = 4.dp,
-                    color = Color(0xFF556B2F), // verde musgo
+                    color = Color(0xFF556B2F), 
                     shape = CircleShape
                 )
                 .align(Alignment.CenterHorizontally)
@@ -374,7 +373,7 @@ fun ProfileScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Conteúdo centralizado abaixo da imagem
+  
         Column(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -426,7 +425,7 @@ fun ProfileScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // 🔹 Quadro de Estudos após todas as informações
+     
         Column(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -440,10 +439,10 @@ fun ProfileScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Image(
-                painter = painterResource(id = R.drawable.quadro_estudos), // substitua pela sua imagem
+                painter = painterResource(id = R.drawable.quadro_estudos),
                 contentDescription = "Quadro de Estudos",
                 modifier = Modifier.align(Alignment.CenterHorizontally),
-                contentScale = ContentScale.FillWidth // mantém tamanho original se a imagem já estiver no tamanho certo
+                contentScale = ContentScale.FillWidth 
             )
         }
     }
